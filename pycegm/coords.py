@@ -1,5 +1,5 @@
 from numpy import radians,degrees,sqrt,sin,cos,tan,arctan,arctan2
-from pyceg import units
+from pycegm import units
 
 def llh_to_xyz(phi,lamda,h,a,b):
     '''
