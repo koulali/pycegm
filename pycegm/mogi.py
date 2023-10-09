@@ -3,9 +3,11 @@ import copy
 import subprocess
 import numpy as np
 import matplotlib.pylab as plt
+from urllib.request import urlretrieve
+
 
 # defaults for practical 2
-displacement_map = './data/E451_20000818_20020719.unw'
+displacement_map = 'E451_20000818_20020719.unw'
 sample    = 1100
 line      = 980
 posting   = 40.0
@@ -32,6 +34,8 @@ def load_data():
     Returns the masked LOS map
 
     '''
+    urlretrieve("https://github.com/koulali/pycegm/raw/main/pycegm/data/E451_20000818_20020719.unw", "E451_20000818_20020719.unw")
+
 
     with open (displacement_map, 'rb') as f:
         coh = np.fromfile(f, dtype='>f', count=-1)
